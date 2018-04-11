@@ -42,7 +42,7 @@ class App extends Component {
       filename: 'No File Chosen',
       cHeight : 0,
       cWidth : 0,
-      dataURL : '',
+      file : null,
       start: 'off',
 
     };
@@ -65,48 +65,11 @@ class App extends Component {
   onFileChange(files){
     console.log('file',files[0])
     var file = files[0]
-    var reader = new FileReader()
-    const canvas = this.refs.canvas
-    const ctx = canvas.getContext("2d")
+    var reader = new FileReader();
+    var src  = window.URL.createObjectURL(file)
+    console.log('src',src);
     var dataURL =""
-    reader.onload =  function(event){
-        var data = event.target.result
-        var image =  new Image()
-        image.onload = function(){
-          var width = image.width
-          var height = image.height
-          var ratio = height / width
-          if(height > 400){
-            ctx.canvas.height = 400
-            ctx.canvas.width = 400 / ratio 
-          }else if(width > 400){
-            ctx.canvas.width = 400
-            ctx.canvas.height = 400*ratio
-          }else{
-            ctx.canvas.width = width
-            ctx.canvas.height = height
-          }
-          var src  = window.URL.createObjectURL(file)
-          console.log("src",src)
-          var base_image = new Image()
-          base_image.src = src
-          base_image.onload = function(){
-          ctx.drawImage(base_image,0,0,ctx.canvas.width,ctx.canvas.height)
-          dataURL = canvas.toDataURL()
-          console.log("dataURL",dataURL)
-          this.setState(function(){
-          return{
-            filename: file.name,
-            cHeight : ctx.canvas.height,
-            cWidth: ctx.canvas.width,
-            dataURL: dataURL,
-          }
-          });
-          }.bind(this);
-        }.bind(this);
-        image.src = data
-    }.bind(this);
-    reader.readAsDataURL(file)
+    this.setState({file:file});
   }
 
   onFileError(error,file){
@@ -179,7 +142,7 @@ class App extends Component {
         {this.state.mode === "manual" &&
         <div className="warp">
           <div className="image">
-           <Canvas dataURL={this.state.dataURL} />
+           <Canvas file={this.state.file} />
           </div>
         </div>          
         }
