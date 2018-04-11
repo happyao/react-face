@@ -1,6 +1,156 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+
 }
+.Title{
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.files{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.files label{
+  font-size: small;
+}
+.files-dropzone{
+  padding: 4px;
+}
+
+.warp{
+  background-color: #fff;
+  background: url("/ico/photo.png"),
+  linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee),
+  linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee);
+  background-size: 128px 128px, 30px 30px, 30px 30px;
+  background-position: center center, 0 0, 15px 15px;
+  background-repeat: no-repeat, repeat, repeat;
+  display: flex;
+  margin-top: 10px;
+  min-height: 360px;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  -webkit-transition: background-image 0.5s ease-in-out;
+  -moz-transition: background-image 0.5s ease-in-out;
+  -ms-transition: background-image 0.5s ease-in-out;
+   transition: background-image 0.5s ease-in-out;
+}
+
+.warp .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  margin: 0;
+  padding: 0;
+  vertical-align: top
+}
+
+.titleBar{
+  display: flex;
+  width: 70%;
+  margin: 2px auto auto;/*put this bar in the center of screen*/
+  align-items: center; /*put the text in the center of bar*/
+  justify-content: center;
+  color: cornflowerblue;
+  border-radius: 2px;
+}
+.function{
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+}
+
+.function button{
+  margin: 2px;
+  width: 80px;
+  text-align: center;
+  box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  background: #bddbfa linear-gradient(to bottom, #92c6fc 20%, cornflowerblue 100%);
+  border:1px solid #84bbf3;
+  cursor:pointer;
+  color:#ffffff;
+  font-weight:bold;
+  padding:6px;
+  text-shadow:0px 1px 0px #528ecc;
+
+}
+
+.function button:hover {
+background:linear-gradient(to bottom, cornflowerblue 20%, #92c6fc 100%);
+background-color:#80b5ea;
+}
+
+.function button:active {
+position:relative;
+top:1px;
+}
+
+.manualAll{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+    -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+}
+.placeholder{
+  width:15%;
+}
+.manualButton{
+  width:70%;
+}
+
+.manualScroll{
+    width:15%;
+}
+.manualScroll input[type="text"]{
+  width: 10%;
+}
+
+.manualScroll input[type="range"]{
+-webkit-appearance: none;
+width: 30%;
+background: #888888;
+outline: none;
+opacity: 0.7;
+transition: opacity .2s;
+}
+
+.manualScroll input[type="range"]:hover{
+opacity: 1;
+}
+
+.manualScroll input[type="range"]::-webkit-slider-thumb{/*safari chrome*/
+
+-webkit-appearance: none;
+width: 10px;
+height: 10px;
+background: gold;
+cursor:pointer;
+border-radius: 50%;
+}
+
+.manualScroll input[type="range"]::-moz-range-thumb{ /*firefox*/
+width: 10px;
+height: 10px;
+background: gold;
+cursor: pointer;
+}
+
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
