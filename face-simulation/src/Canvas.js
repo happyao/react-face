@@ -57,12 +57,12 @@ export default class Canvas extends React.Component{
 	render(){
 			let warningMsg;
 			if(!this.props.file){
-				warningMsg = <div>please select file</div>;
+				warningMsg = <div>please select file</div>
 			}
 
 			return <div>
 				{warningMsg}
-				<canvas ref="canvas" width="480" height="360"></canvas>;			
+				<canvas ref="canvas" width="480" height="360"></canvas>		
 			
 			</div>;			
 

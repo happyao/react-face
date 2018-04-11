@@ -142,7 +142,8 @@ class App extends Component {
         {this.state.mode === "manual" &&
         <div className="warp">
           <div className="image">
-           <Canvas file={this.state.file} />
+           <Canvas  file={this.state.file} />
+          
           </div>
         </div>          
         }
