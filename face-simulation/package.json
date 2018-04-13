@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "rc-slider": "^8.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-files": "^2.4.5",
+    "react-html5-slider": "^0.2.1",
+    "react-input-range": "^1.3.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4"
